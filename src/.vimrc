@@ -146,7 +146,7 @@ let MinimalUI=1
 """""""""""""""""""""""""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 nnoremap <leader>e :CtrlP<cr>
-nnoremap <leader>n :CtrlP<cr>:tabnew<cr>
+nnoremap <leader>n :tabnew<cr>:CtrlP<cr>
 set wildignore+=*build/*
 
 
@@ -171,3 +171,6 @@ nnoremap <leader>w :w<cr>
 
 " Select all text in current buffer
 nnoremap <leader>a ggVG
+
+" oo new line
+nmap oo i<CR><Esc>
