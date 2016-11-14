@@ -2,7 +2,6 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-" Vundle no longer used, changed to Pathogen Autoload
 " set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#begin()
 "
@@ -18,7 +17,6 @@ filetype off                  " required
 " Plugin 'honza/vim-snippets'
 "
 " call vundle#end()            " required
-
 filetype plugin indent on    " required
 
 " Solve confilt of TAB: snipmate, supertab
