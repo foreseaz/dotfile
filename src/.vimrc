@@ -97,11 +97,8 @@ set shiftwidth=2
 set virtualedit=onemore
 
 " Access system clipboard
-if has("unnamedplus")
-   set clipboard=unnamedplus
-else
-   set clipboard=unnamed
-endif
+" For Mac
+set clipboard=unnamed
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
