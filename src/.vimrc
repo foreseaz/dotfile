@@ -2,42 +2,31 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-" Vundle no longer used, changed to Pathogen Autoload
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-"
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'bling/vim-airline'
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Plugin 'tomasr/molokai'
-" Plugin 'altercation/vim-colors-solarized'
-" Plugin 'ervandew/supertab'
-" Plugin 'tomtom/tcomment_vim'
-" Plugin 'alvan/vim-closetag'
-" Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
-"
-" call vundle#end()            " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'ervandew/supertab'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'alvan/vim-closetag'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Solve confilt of TAB: snipmate, supertab
 let g:UltiSnipsExpandTrigger="<tab>"
 
-" Disable Preston Koprivica's JS indentation logging
-let g:js_indent_log = 0
-
 " Auto load Plugins
 execute pathogen#infect()
 
-" Folding setting
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use"
-
-" Main setting
 syntax on
+filetype plugin indent on
 set nowrap
 set ruler
 set ru
@@ -67,13 +56,19 @@ nnoremap N Nzz
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
+" Next and Previous Tab
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l>   :tabnext<CR>
+inoremap <C-h> <Esc>:tabprevious<CR>i
+inoremap <C-l>   <Esc>:tabnext<CR>i
+
 " color theme setting
 set laststatus=2 " Always show status line
 syntax enable
 set t_Co=256
 set background=dark
 colorscheme solarized
-" let g:molokai_original=1
+let g:molokai_Original=1
 " let g:rehash256=1
 " colorscheme molokai
 
@@ -93,12 +88,16 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 
+
 " Allow for cursor beyond last character
 set virtualedit=onemore
 
 " Access system clipboard
-" For Mac
-set clipboard=unnamed
+if has("unnamedplus")
+   set clipboard=unnamedplus
+else
+   set clipboard=unnamed
+endif
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -134,7 +133,7 @@ endfunc
 """""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *.html.erb set filetype=html
 " Two-space indentation for some file types
-autocmd FileType html,xml,ant,ruby,eruby,jsp,jspf,python setlocal shiftwidth=2 tabstop=2
+autocmd FileType html,xml,ant,ruby,eruby,jsp,jspf setlocal shiftwidth=2 tabstop=2
 " Increase the indent for these HTML tags
 let g:html_indent_inctags = "html,body,head,tbody"
 
@@ -197,6 +196,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 nnoremap <leader>e :CtrlP<cr>
 nnoremap <leader>n :tabnew<cr>:CtrlP<cr>
 set wildignore+=*build/*
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""
@@ -259,3 +259,7 @@ if exists("+undofile")
     set undodir+=~/.vim/undo//
     set undofile
 endif
+
+" if (has("termguicolors"))
+"  set termguicolors
+" endif

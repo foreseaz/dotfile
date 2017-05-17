@@ -85,6 +85,7 @@
   'ctrl-h': 'pane:show-previous-item'
   'ctrl-l': 'pane:show-next-item'
   ', w': 'core:save'
+  ', c': 'editor:toggle-line-comments'
 
   'h': 'vim-mode:move-left'
   'left': 'vim-mode:move-left'
