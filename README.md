@@ -1,6 +1,8 @@
 ### Personal Dev Env for new Mac
 - zsh
   + jq # JSON parsing
+  + graphviz
+
 - vim
   + pathogen autoload
   + nerdtree
@@ -10,6 +12,7 @@
   + vim-closetag
   + vim-color-solarized
   + vim-snippets
+
 - tmux
 - atom
   + vim-mode with keymaps
