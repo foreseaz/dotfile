@@ -1,5 +1,6 @@
 ### Personal Dev Env for new Mac
 - zsh
+  + jq # JSON parsing
 - vim
   + pathogen autoload
   + nerdtree
