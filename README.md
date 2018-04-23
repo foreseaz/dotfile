@@ -1,6 +1,6 @@
 ### Personal Dev Env for new Mac
 - zsh
-  + jq # JSON parsing
+  + jq (JSON parsing)
   + graphviz
 
 - vim
