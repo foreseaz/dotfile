@@ -6,7 +6,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
@@ -15,6 +16,8 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'alvan/vim-closetag'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,7 +76,7 @@ let g:molokai_Original=1
 " colorscheme molokai
 
 " Airlinebar config
-let g:airline_theme='luna'
+let g:airline_theme='papercolor'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
