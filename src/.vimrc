@@ -25,9 +25,6 @@ filetype plugin indent on    " required
 " Solve confilt of TAB: snipmate, supertab
 let g:UltiSnipsExpandTrigger="<tab>"
 
-" Auto load Plugins
-execute pathogen#infect()
-
 syntax on
 filetype plugin indent on
 set nowrap
