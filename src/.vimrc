@@ -14,16 +14,13 @@ Plugin 'tomasr/molokai'
 Plugin 'ervandew/supertab'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'alvan/vim-closetag'
-Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'sainnhe/edge'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-" Solve confilt of TAB: snipmate, supertab
-let g:UltiSnipsExpandTrigger="<tab>"
 
 syntax on
 filetype plugin indent on
@@ -63,17 +60,14 @@ inoremap <C-h> <Esc>:tabprevious<CR>i
 inoremap <C-l>   <Esc>:tabnext<CR>i
 
 " color theme setting
-set laststatus=2 " Always show status line
-syntax enable
-set t_Co=256
+set termguicolors
 set background=dark
-colorscheme solarized
-let g:molokai_Original=1
-" let g:rehash256=1
-" colorscheme molokai
+let g:edge_style = 'neon'
+let g:edge_disable_italic_comment = 1
+colorscheme edge
 
 " Airlinebar config
-let g:airline_theme='papercolor'
+let g:airline_theme='edge'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
